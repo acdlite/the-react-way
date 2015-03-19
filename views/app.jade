@@ -1,0 +1,15 @@
+extends ./base.jade
+
+block css
+  if (env.NODE_ENV !== 'development')
+    style
+      include ../public/css/app.min.css
+
+block body
+  #app!=appString
+  script#slides-data(type='application/json')!=slidesString
+
+  if (env.NODE_ENV == 'development')
+    script(src='http://0.0.0.0:8081/js/app.js', defer)
+  else
+    script(src='/js/app.min.js', defer)

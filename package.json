@@ -1,0 +1,50 @@
+{
+  "name": "the-react-way",
+  "version": "0.0.0",
+  "description": "Presentation for Frontend Awesome Meetup, March 2015",
+  "main": "lib/server",
+  "scripts": {
+    "prestart": "make fast-build",
+    "start": "node lib/server"
+  },
+  "author": "Andrew Clark <acdlite@me.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "~5.1.0",
+    "babel": "~4.7.16",
+    "babel-core": "~4.7.16",
+    "babel-eslint": "~2.0.2",
+    "babel-loader": "~4.2.0",
+    "clean-css": "~3.1.8",
+    "css-loader": "~0.9.1",
+    "eslint": "~0.17.1",
+    "front-matter": "~1.0.0",
+    "json-sass": "~1.3.3",
+    "react-hot-loader": "~1.2.3",
+    "source-map-support": "~0.2.10",
+    "style-loader": "~0.8.3",
+    "watch": "~0.14.0",
+    "webpack": "~1.7.3",
+    "webpack-dev-server": "~1.7.0"
+  },
+  "dependencies": {
+    "flummox": "~2.13.2",
+    "highlight.js": "~8.4.0",
+    "keymaster": "~1.6.2",
+    "koa": "~0.18.1",
+    "koa-bodyparser": "~1.4.1",
+    "koa-conditional-get": "~1.0.2",
+    "koa-etag": "~2.0.0",
+    "koa-fresh": "0.0.3",
+    "koa-gzip": "~0.1.0",
+    "koa-json": "~1.1.1",
+    "koa-qs": "~2.0.0",
+    "koa-static": "~1.4.9",
+    "koa-views": "~2.1.2",
+    "koa-router": "~4.2.0",
+    "react": "~0.12.2",
+    "react-router": "~0.12.4",
+    "remarkable": "~1.6.0",
+    "then-jade": "~2.2.1"
+  }
+}

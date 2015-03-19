@@ -1,0 +1,74 @@
+@import "vendor";
+@import url(//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic,700italic);
+
+html {
+  font-family: 'Source Sans Pro', sans-serif;
+  background-color: #146cce;
+  color: #fff;
+}
+
+// Muahahahahaha
+.View {
+  box-sizing: border-box;
+  display: flex;
+  position: relative;
+}
+
+.Slide {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+
+  @media (min-width: 40em) {
+    font-size: 3vw;
+  }
+
+  pre code {
+    @extend .hljs;
+  }
+}
+
+.Button {
+  display: inline;
+  background: transparent;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  overflow: visible;
+  text-decoration: none;
+  color: inherit;
+  text-align: start;
+  white-space: normal;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.SlideTransition--fade{
+  $transition-duration: 150ms;
+
+  &-enter {
+    opacity: 0.01;
+    transition: opacity $transition-duration ease-in;
+  }
+
+  &-enter.SlideTransition--fade-enter-active {
+    opacity: 1;
+  }
+
+  &-leave {
+    opacity: 1;
+    transition: opacity $transition-duration ease-in;
+  }
+
+  &-leave.SlideTransition--fade-leave-active {
+    opacity: 0.01;
+  }
+}

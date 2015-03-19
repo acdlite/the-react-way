@@ -1,0 +1,11 @@
+{
+  "watch": [
+    "lib/",
+    "views/",
+    "public/slides.json"
+  ],
+  "ext": "js json jade yaml",
+  "env": {
+    "NODE_ENV": "development"
+  }
+}
