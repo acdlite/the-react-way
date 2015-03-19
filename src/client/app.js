@@ -7,9 +7,8 @@ import Flux from '../shared/Flux';
 import routes from '../shared/routes';
 
 const slides = JSON.parse(
-  document.getElementById('slides-data').innerHTML
+  document.getElementById('slides-data').innerText
 );
-
 
 // Initialize flux
 const flux = new Flux({ slides });

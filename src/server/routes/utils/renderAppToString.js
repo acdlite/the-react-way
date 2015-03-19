@@ -4,9 +4,12 @@ import Router from 'react-router';
 import FluxComponent from 'flummox/component';
 import routes from '../../../shared/routes';
 import Flux from '../../../shared/Flux';
+import htmlescape from 'htmlescape';
 
 const slidesString = fs.readFileSync('public/slides.json', 'utf8');
 const slides = JSON.parse(slidesString);
+
+const escapedSlidesString = htmlescape(slides);
 
 export default async ({ initialPath }) => {
 
@@ -45,6 +48,6 @@ export default async ({ initialPath }) => {
 
   return {
     appString,
-    slidesString,
+    slidesString: escapedSlidesString,
   };
 }

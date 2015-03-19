@@ -30,6 +30,7 @@
   "dependencies": {
     "flummox": "~2.13.2",
     "highlight.js": "~8.4.0",
+    "htmlescape": "~1.0.0",
     "keymaster": "~1.6.2",
     "koa": "~0.18.1",
     "koa-bodyparser": "~1.4.1",
@@ -39,9 +40,9 @@
     "koa-gzip": "~0.1.0",
     "koa-json": "~1.1.1",
     "koa-qs": "~2.0.0",
+    "koa-router": "~4.2.0",
     "koa-static": "~1.4.9",
     "koa-views": "~2.1.2",
-    "koa-router": "~4.2.0",
     "react": "~0.12.2",
     "react-router": "~0.12.4",
     "remarkable": "~1.6.0",

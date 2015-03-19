@@ -5,6 +5,7 @@ import hljs from 'highlight.js';
 const md = new Remarkable({
   html: true,
   linkify: true,
+  typographer: true,
   highlight: (str, lang) => {
     if (lang && hljs.getLanguage(lang)) {
       try {
@@ -25,6 +26,10 @@ const Markdown = React.createClass({
     return {
       src: '',
     };
+  },
+
+  componentDidMount() {
+    if (typeof twttr !== 'undefined') twttr.widgets.load();
   },
 
   render() {

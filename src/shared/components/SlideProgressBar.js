@@ -4,12 +4,23 @@ import View from './View';
 import Button from './Button';
 
 const style = {
+  bar: {
+    position: 'absolute',
+    bottom: 0,
+    width: '100%',
+  },
+
   button: {
     padding: '0.75em',
     fontSize: '1.5em',
     position: 'relative',
     top: '0.125em',
-  }
+  },
+
+  wrapper: {
+    justifyContent: 'space-between',
+    flexGrow: 1,
+  },
 };
 
 const SlideProgressBar = React.createClass({
@@ -17,12 +28,14 @@ const SlideProgressBar = React.createClass({
 
   componentDidMount() {
     const key = require('keymaster');
+    key('space', this.nextSlide);
     key('right', this.nextSlide);
     key('left', this.prevSlide);
   },
 
   componentWillUnmount() {
     const key = require('keymaster');
+    key.unbind('space');
     key.unbind('right');
     key.unbind('left');
   },
@@ -66,14 +79,14 @@ const SlideProgressBar = React.createClass({
     const { currentSlide, totalSlides } = this.getSlidePositions();
 
     return (
-      <View style={{
-        justifyContent: 'space-between',
-      }}>
-        <Button component={Link} to={`/${this.getPrevSlide()}`} style={style.button}>&#x25c0;</Button>
-        <span style={{ alignSelf: 'center' }}>
-          {currentSlide} / {totalSlides}
-        </span>
-        <Button component={Link} to={`/${this.getNextSlide()}`} style={style.button}>&#x25ba;</Button>
+      <View className="SlideProgressBar" style={style.bar}>
+        <View className="SlideProgressBar-wrapper" style={style.wrapper}>
+          <Button component={Link} to={`/${this.getPrevSlide()}`} style={style.button}>&#x25c0;</Button>
+          <View style={{ alignSelf: 'center' }}>
+            {currentSlide}&nbsp;/&nbsp;{totalSlides}
+          </View>
+          <Button component={Link} to={`/${this.getNextSlide()}`} style={style.button}>&#x25ba;</Button>
+        </View>
       </View>
     );
   }

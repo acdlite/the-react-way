@@ -2,6 +2,7 @@ import React from 'react';
 import Flux from 'flummox/component';
 import { RouteHandler } from 'react-router';
 import SlideProgressBar from './SlideProgressBar';
+import PLLogo from './PLLogo';
 import View from './View';
 
 const AppHandler = React.createClass({
@@ -13,6 +14,7 @@ const AppHandler = React.createClass({
         width: '100%',
         flexDirection: 'column',
       }}>
+        <PLLogo />
         <Flux connectToStores={{
           slides: store => ({
             slide: store.state.slides[this.props.params.currentSlide - 1],

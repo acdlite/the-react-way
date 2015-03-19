@@ -1,5 +1,5 @@
 @import "vendor";
-@import url(//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic,700italic);
+@import url(//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic,700italic|Source+Code+Pro);
 
 html {
   font-family: 'Source Sans Pro', sans-serif;
@@ -7,27 +7,12 @@ html {
   color: #fff;
 }
 
-// Muahahahahaha
-.View {
-  box-sizing: border-box;
-  display: flex;
-  position: relative;
+a {
+  color: #fff;
 }
 
-.Slide {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  left: 0;
-
-  @media (min-width: 40em) {
-    font-size: 3vw;
-  }
-
-  pre code {
-    @extend .hljs;
-  }
+pre, code {
+  font-family: 'Source Code Pro';
 }
 
 .Button {
@@ -48,6 +33,42 @@ html {
 
   &:hover {
     cursor: pointer;
+  }
+}
+
+// Muahahahahaha
+.View {
+  box-sizing: border-box;
+  display: flex;
+  position: relative;
+}
+
+.Slide {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+
+  @media (min-width: 40em) {
+    font-size: 2.5vw;
+  }
+
+  pre code {
+    @extend .hljs;
+    max-height: 16em;
+    font-size: 80%;
+  }
+}
+
+.SlideProgressBar {
+  &-wrapper {
+    transform: translateY(100%);
+    transition: transform 150ms;
+  }
+
+  &:hover &-wrapper {
+    transform: none;
   }
 }
 
