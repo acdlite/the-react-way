@@ -6,16 +6,23 @@ import path from 'path';
 
 const slideDir = 'slides';
 
+const outline = fs.createWriteStream('public/outline.txt');
+
 const slides = fs.readdirSync('slides')
   .filter(filename => filename.endsWith('.md'))
   .sort(sortAlphabetically)
-  .map((filename, i) => {
+  .map((filename, i, filenames) => {
     const slideNumber = i + 1;
     const fullFilename = path.join(slideDir, filename);
 
-    const { attributes, body } = frontmatter(
-      fs.readFileSync(fullFilename, 'utf8')
-    );
+    const contents = fs.readFileSync(fullFilename, 'utf8');
+
+    const { attributes, body } = frontmatter(contents);
+
+    outline.write(contents);
+    if (slideNumber !== filenames.length) {
+      outline.write(`\n\n*** ${slideNumber} ***\n\n`);
+    }
 
     return {
       body,

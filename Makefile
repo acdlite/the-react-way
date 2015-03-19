@@ -33,7 +33,7 @@ webpack-server: $(LIB_JS)
 
 slides: public/slides.json
 
-public/slides.json: js slides.yaml
+public/slides.json: js
 	node ./lib/scripts/buildSlides.js
 
 watch-slides:

@@ -75,6 +75,26 @@ const SlideProgressBar = React.createClass({
     return { currentSlide, totalSlides };
   },
 
+  progress(currentSlide, totalSlides) {
+    // let bullets = [];
+    //
+    // for (let i = 0; i < totalSlides; i++) {
+    //   const n = i + 1;
+    //
+    //    bullets.push(
+    //     <Bullet slideNumber={n} currentSlide={currentSlide} />
+    //   );
+    // }
+    //
+    // return bullets;
+
+    return (
+      <View style={{ alignSelf: 'center' }}>
+        {currentSlide}&nbsp;/&nbsp;{totalSlides}
+      </View>
+    );
+  },
+
   render() {
     const { currentSlide, totalSlides } = this.getSlidePositions();
 
@@ -82,14 +102,31 @@ const SlideProgressBar = React.createClass({
       <View className="SlideProgressBar" style={style.bar}>
         <View className="SlideProgressBar-wrapper" style={style.wrapper}>
           <Button component={Link} to={`/${this.getPrevSlide()}`} style={style.button}>&#x25c0;</Button>
-          <View style={{ alignSelf: 'center' }}>
-            {currentSlide}&nbsp;/&nbsp;{totalSlides}
-          </View>
+          {this.progress(currentSlide, totalSlides)}
           <Button component={Link} to={`/${this.getNextSlide()}`} style={style.button}>&#x25ba;</Button>
         </View>
       </View>
     );
   }
+
 });
+
+const Bullet = React.createClass({
+  render() {
+    const { currentSlide, slideNumber } = this.props;
+
+    return (
+      <Link to={`/${slideNumber}`} style={{
+        height: 10,
+        width: 10,
+        borderRadius: '50%',
+        border: '1px solid #fff',
+        background: (currentSlide === slideNumber)
+          ? '#fff'
+          : 'transparent',
+      }}/>
+    )
+  }
+})
 
 export default SlideProgressBar;
