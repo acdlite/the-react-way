@@ -3,8 +3,10 @@ The React Way
 
 An isomorphic React slide deck, about React.
 
-Presented at [Frontend Awesome Meetup](http://www.meetup.com/Gainesville-Front-End-Dev-Meetup/)
+Presented at [Frontend Awesome Meetup](http://www.meetup.com/Gainesville-Front-End-Dev-Meetup/)  
 March 19, 2015
+
+![preview](preview.png)
 
 Running the slide deck
 ----------------------
