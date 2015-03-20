@@ -11,6 +11,8 @@ March 19, 2015
 Running the slide deck
 ----------------------
 
+Only tested in Chrome. Probably won't work in Safari because I didn't care about adding prefixes to flexbox properties.
+
 Run `npm start` to start the server. Then navigate to http://localhost:3000. (You could use wget to convert this to a static site.)
 
 Run `make watch` instead to start the server in development mode, with hot reloading.
@@ -19,8 +21,6 @@ How it's made
 -------------
 
 The slides are generated from Markdown documents located in `slides`. A build task combines the slides into a JSON document, which is embedded into the page by the server to be loaded by the React app.
-
-Only tested in Chrome. Probably won't work in Safari because I didn't care about adding prefixes to flexbox properties.
 
 - [React](http://facebook.github.io/react/)
 - [Flummox](https://github.com/acdlite/flummox)
